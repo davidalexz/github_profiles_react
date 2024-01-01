@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #241f28;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #c493ff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+h4 {
+    margin: 0;
+}
+
+.main,
+.profile,
+.info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.profile {
+    background-color: #604d78;
+}
+
+img.github_logo,
+.profile_logo {
+    display: block;
+    height: 120px;
+    width: 120px;
+    margin: 25px auto;
+}
+
+small {
+    margin-top: 10px;
+}
+
+.search {
+    margin-top: 10rem;
+}
+
+#search-input {
+    background-color: #414141;
+    width: 400px;
+    border-radius: 3px;
+    border-style: none;
+    padding: 13px;
+    color: #fff;
+}
+
+#search:focus {
+    outline: none;
+}

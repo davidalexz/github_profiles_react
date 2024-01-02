@@ -27,10 +27,11 @@ export default function App() {
             }
         }
     };
-    console.log(userData);
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
+            setUserData(null);
+            setError(null);
             fetchData();
         }
     };
@@ -52,8 +53,6 @@ export default function App() {
 
     const handleChange = (e) => {
         setUsername(e.target.value);
-        setUserData(null);
-        setError(null);
     };
 
     return (
@@ -84,36 +83,38 @@ export default function App() {
             ) : (
                 <>
                     <h2>Github Profiles</h2>
-                    <div className="profile">
+                    <div className="main">
                         {/* {userData && userData.length > 0 && userData[0].owner && (
                         <img src={userData[0].owner.avatar_url} alt="" />
                     )} */}
                         <div className="info">
                             <img className="profile_logo" src={userData.avatar_url} alt="" />
-                            <div className="username">
-                                <a href={userData.url}>{userData.login}</a>
-                            </div>
+                            <a className="username" href={userData.html_url} target="_blank">
+                                {userData.login}
+                            </a>
                             <small className="followers">
                                 {userData.followers} followers • {userData.following} following
                             </small>
-                            <div className="real_name">{userData.name}</div>
-                            {userData.email && <div className="user_email">{userData.email}</div>}
+                            <div className="real_name"> Name: {userData.name}</div>
+                            {userData.email && (
+                                <div className="user_email">Email: {userData.email}</div>
+                            )}
                             {userData.location && (
-                                <div className="user_location">{userData.location}</div>
+                                <div className="user_location">Location: {userData.location}</div>
                             )}
                         </div>
-                    </div>
-                    <div className="search">
-                        <h4>GitHub</h4>
-                        <input
-                            type="text"
-                            id="search-input"
-                            value={username}
-                            onChange={handleChange}
-                            onKeyDown={handleKeyPress}
-                            placeholder="Search for user"
-                        />
-                        {error && <div className="error-message">{error}</div>}
+                        <div className="search">
+                            <h4>GitHub</h4>
+                            <input
+                                type="text"
+                                id="search-input"
+                                value={username}
+                                onChange={handleChange}
+                                onKeyDown={handleKeyPress}
+                                placeholder="Search for user"
+                            />
+                            {error && <div className="error-message">{error}</div>}
+                        </div>
                     </div>
                 </>
             )}

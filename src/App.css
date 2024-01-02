@@ -4,7 +4,7 @@
 
 body {
     background-color: #241f28;
-    min-height: 100vh;
+    max-height: 100vh;
 }
 
 h2 {
@@ -17,18 +17,32 @@ h4 {
     margin: 0;
 }
 
-.main,
-.profile,
-.info {
+a.username,
+.followers {
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.real_name,
+.user_email,
+.user_location {
+    padding: 2px;
+    margin: 0 10px;
+}
+
+.main {
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
 }
 
-.profile {
+.info {
     background-color: #604d78;
+    min-width: 500px;
+    max-height: 400px;
+    border-radius: 5px;
 }
 
 img.github_logo,
@@ -39,12 +53,16 @@ img.github_logo,
     margin: 25px auto;
 }
 
+.profile_logo {
+    border-radius: 50%;
+}
+
 small {
     margin-top: 10px;
 }
 
 .search {
-    margin-top: 10rem;
+    margin-top: 150px;
 }
 
 #search-input {

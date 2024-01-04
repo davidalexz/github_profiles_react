@@ -13,8 +13,8 @@ h2 {
     font-size: 2rem;
 }
 
-h4 {
-    margin: 0;
+a.username {
+    color: red;
 }
 
 a.username,
@@ -32,17 +32,25 @@ a.username,
 }
 
 .main {
+    margin-top: 5rem;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 500px;
 }
 
 .info {
-    background-color: #604d78;
+    background-color: #463d53;
     min-width: 500px;
-    max-height: 400px;
+    min-height: 300px;
     border-radius: 5px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 img.github_logo,
@@ -57,14 +65,13 @@ img.github_logo,
     border-radius: 50%;
 }
 
-small {
-    margin-top: 10px;
-}
-
 .search {
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
+.error-message {
+    color: #832c3d;
+}
 #search-input {
     background-color: #414141;
     width: 400px;
@@ -74,6 +81,7 @@ small {
     color: #fff;
 }
 
-#search:focus {
+#search-input:focus {
     outline: none;
+    background-color: #463d53;
 }

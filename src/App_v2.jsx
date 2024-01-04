@@ -65,28 +65,23 @@ export default function App() {
                             <img src={logoImg} className="github_logo" alt="github" />
                             <small>Start your search below...</small>
                         </div>
-
-                        <div className="search">
-                            <h4>GitHub</h4>
-                            <input
-                                type="text"
-                                id="search-input"
-                                value={username}
-                                onChange={handleChange}
-                                onKeyDown={handleKeyPress}
-                                placeholder="Search for user"
-                            />
-                            {error && <div className="error-message">{error}</div>}
-                        </div>
+                    </div>
+                    <div className="search">
+                        <input
+                            type="text"
+                            id="search-input"
+                            value={username}
+                            onChange={handleChange}
+                            onKeyDown={handleKeyPress}
+                            placeholder="Search for user"
+                        />
+                        {error && <small className="error-message">{error}</small>}
                     </div>
                 </>
             ) : (
                 <>
                     <h2>Github Profiles</h2>
                     <div className="main">
-                        {/* {userData && userData.length > 0 && userData[0].owner && (
-                        <img src={userData[0].owner.avatar_url} alt="" />
-                    )} */}
                         <div className="info">
                             <img className="profile_logo" src={userData.avatar_url} alt="" />
                             <a className="username" href={userData.html_url} target="_blank">
@@ -103,18 +98,17 @@ export default function App() {
                                 <div className="user_location">Location: {userData.location}</div>
                             )}
                         </div>
-                        <div className="search">
-                            <h4>GitHub</h4>
-                            <input
-                                type="text"
-                                id="search-input"
-                                value={username}
-                                onChange={handleChange}
-                                onKeyDown={handleKeyPress}
-                                placeholder="Search for user"
-                            />
-                            {error && <div className="error-message">{error}</div>}
-                        </div>
+                    </div>
+                    <div className="search">
+                        <input
+                            type="text"
+                            id="search-input"
+                            value={username}
+                            onChange={handleChange}
+                            onKeyDown={handleKeyPress}
+                            placeholder="Search for user"
+                        />
+                        {error && <small className="error-message">{error}</small>}
                     </div>
                 </>
             )}

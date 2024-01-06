@@ -52,7 +52,9 @@ export default function App() {
     }, []);
 
     const handleChange = (e) => {
+        e.preventDefault();
         setUsername(e.target.value);
+        console.log(username);
     };
 
     return (
